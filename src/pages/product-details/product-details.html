@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar style="opacity: 0.8" no-border-bottom color="primary">
+    <ion-title>商品详情</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content fullscreen>
+  <ion-row>
+    <ion-col>
+      <img src="{{imgs[0].src}}"/>
+    </ion-col>
+  </ion-row>
+  <div class="item-good">
+    <div class="list-price buy">
+      <span class="price-new ml"><i>活动价￥</i>{{selectedItem.sale_price}}</span>
+      <br>
+      <span class="del f14 ml2"><i>原价￥</i>{{selectedItem.regular_price}}</span>
+    </div>
+    <h1>{{selectedItem.name}}</h1>
+  </div>
+  <button ion-button full primary>去抢购</button>
+  <div *ngFor="let key of getKeys(imgs)">
+    <img src="{{imgs[key].src}}"/>
+  </div>  
+</ion-content>

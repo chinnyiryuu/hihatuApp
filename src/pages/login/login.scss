@@ -1,0 +1,38 @@
+page-login{
+    .content-ios,.item-ios{
+        background-color: #f8f8f8;
+    }
+    .third-party-login{
+        margin-top: 3em;
+        margin-bottom: 5em;
+        // ion-icon{
+        //     position: absolute;
+        //     left: 20px;
+        //     top: 8px;
+        //     font-size: 2em !important;
+        // }
+    }
+    .facebook{
+        background-color: #3B5999;
+        color: white;
+    }
+    .weixin{
+        background-color: #01BB00;
+        color: white;
+    }
+    .google{
+        background-color: white;
+        .c1{
+            color: rgb(51, 105, 232);
+        }
+        .c2{
+            color: rgb(213, 15, 37);
+        }
+        .c3{
+            color: rgb(0, 153, 37);
+        }
+        .c4{
+            color: rgb(238, 178, 17);
+        }
+    }
+}

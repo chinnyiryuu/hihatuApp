@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar style="opacity: 0.8" no-border-bottom color="primary">
+    <ion-title>店铺详情</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content fullscreen>
+  <h1>{{selectedItem.name}}</h1>
+  <ion-row>
+    <ion-col>
+      <img src="{{selectedItem.avatar_url}}" />
+    </ion-col>
+  </ion-row>
+  <div class="item-good">
+    <div class="list-price buy">
+      <span class="price-new ml"><i>地址</i>{{selectedItem.profiles.address}}</span>
+      <i class="del f14 ml2">￥{{selectedItem.ReservePrice}}</i>
+    </div>
+  </div>
+  <div class="pageMenuSlides">
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide {{i==0?'bottomLine':''}}" *ngFor="let item of menus;let i=index;" tappable (click)="selectPageMenu($event,i)">{{item}}</div>
+      </div>
+    </div>
+  </div>
+  <ion-slides #contentSlides (ionSlideDidChange)="slideChanged()" >
+    <ion-slide *ngFor="let item of menus">
+      <!-- <ion-products [products]="products"></ion-products> -->
+
+       <ion-item-group *ngFor="let p of categoriesByStId" (click)="goDetails(p)">
+        <ion-item-divider color="light">{{p.name}}</ion-item-divider>
+          <!-- <ion-item *ngFor="let key of getKeys(p.images)">  -->
+         <img src="{{p.images[0].src}}" /> 
+        <!-- </ion-item>   -->
+      </ion-item-group> 
+    </ion-slide>
+  </ion-slides>
+  <ion-item>店铺介绍</ion-item>
+   <div *ngFor="let key of getKeys(imgs)">
+    <img src="{{imgs[key].src}}"/>
+  </div>  
+</ion-content>

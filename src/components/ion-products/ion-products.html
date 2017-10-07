@@ -1,0 +1,25 @@
+<!-- <div class="products">
+    <ion-row wrap>
+      <ion-col tappable col-6 *ngFor="let p of categoriesBystor"> -->
+         <!-- <img src="{{p.avatar_url}}"/> -->
+        <!-- <p>{{p.name}}</p> -->
+        <!-- <div class="list-price buy">
+          <span class="price-new"><i>￥</i>{{p.ZkFinalPrice}}</span>
+          <i class="del">￥<span>{{p.ReservePrice}}</span></i>
+        </div> -->
+      <!-- </ion-col>
+    </ion-row>
+  </div> -->
+
+ <ion-list>
+   <ion-item-group>
+      <ion-item-divider color="light">A</ion-item-divider>
+      <ion-item>Angola</ion-item>
+      <ion-item>Argentina</ion-item>
+    </ion-item-group>
+    <ion-item-group *ngFor="let p of categoriesByStId">
+      <ion-item-divider color="light">{{p.name}}</ion-item-divider>
+      <ion-item>Angola</ion-item>
+      <ion-item>Argentina</ion-item>
+    </ion-item-group>
+</ion-list>

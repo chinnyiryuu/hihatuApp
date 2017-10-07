@@ -1,0 +1,77 @@
+<ion-content class="card-background-page">
+  <ion-item class="home-searchbar">
+      <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+      <button class="home-message-btn" item-end ion-button icon-only (click)="itemSelected()">
+        <ion-icon name="chatboxes"></ion-icon>
+      </button>
+  </ion-item>
+  <!-- <ion-card>
+    <ion-slides [autoplay]="3000" [loop]="true" pager>
+      
+
+    </ion-slides>
+    </ion-card> -->
+    <ion-card>
+
+      <ion-col>
+          <ion-slides *ngIf="images && images.length" [autoplay]="3000" [loop]="true" pager=true>  
+          <!-- <ion-slides >  -->
+          <ion-slide *ngFor="let imgs of images">
+              <img src="{{imgs}}" alt="">
+          </ion-slide>
+        </ion-slides>
+      </ion-col>
+
+    </ion-card>
+    <div class="shop-recommend">
+    <ion-list class="header" no-lines>
+      <button ion-item (click)="showMore()">
+      <label item-start>店铺推荐</label>
+      <label item-end>查看更多</label>
+      </button>
+    </ion-list>
+    <ion-item class="shop-item">
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <img src="assets/img/IMG_0404.JPG" />
+          </ion-col>
+          <ion-col>
+            <img src="assets/img/IMG_0405.JPG" />
+          </ion-col>
+          <ion-col>
+            <img src="assets/img/IMG_0406.JPG" />
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+  </div>
+  <ion-card>
+    <ion-slides [autoplay]="3000" [loop]="true" pager>
+      <ion-slide>
+        <img src="assets/img/IMG_0401.JPG" />
+        <div class="card-title">鳗鱼饭</div>
+        <div class="card-subtitle">新宿店</div>
+      </ion-slide>
+
+      <ion-slide>
+        <img src="assets/img/IMG_0401.JPG" />
+        <div class="card-title">麻婆豆腐</div>
+        <div class="card-subtitle">池袋店</div>
+      </ion-slide>
+
+    </ion-slides>
+  </ion-card>
+</ion-content>
+
+  <!-- <ion-card>
+    <ion-col *ngFor="let items of countries">
+       <ion-row>{{items}}</ion-row>
+      <ion-col *ngFor="let Key of getKeys(items)">
+         <ion-row>{{items[Key]}}</ion-row> 
+        <ion-col *ngFor="let imgs of getKeys(items['images'])">
+          <ion-row>{{items['images'][imgs].src}}</ion-row>
+          <img src="{{items['images'][imgs].src}}" />
+        </ion-col>
+    </ion-col>
+  </ion-card> -->
